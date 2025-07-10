@@ -156,3 +156,32 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+.leaflet-control-layers-overlays::before {
+    /* O texto que você quer que apareça como título */
+    content: 'Legenda: Confronto'; 
+    
+    /* Estilo do título */
+    display: block; /* Faz o título ocupar sua própria linha */
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px; /* Espaço entre o título e a primeira camada */
+    
+    /* Opcional: Adiciona uma linha sutil abaixo do título */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 5px;
+}
+/* PRIORIDADES*/
+.leaflet-control-layers-overlays::after {
+    /* O texto que você quer que apareça como título */
+    content: 'Legenda: Prioridades'; 
+    
+    /* Estilo do título */
+    display: block; /* Faz o título ocupar sua própria linha */
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px; /* Espaço entre o título e a primeira camada */
+    
+    /* Opcional: Adiciona uma linha sutil abaixo do título */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 5px;
+}

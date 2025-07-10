@@ -623,4 +623,4 @@ export const MUNICIPIOS_BAHIA = [
     { nome: "Itaparica", coords: [-12.8215, -38.2335] },
     { nome: "Valença", coords: [-13.0719, -38.7309] }
     // Adicione quantos municípios precisar
-    ];        
+    ];         
