@@ -15243,7 +15243,7 @@ export const COM_OBITO = [
   },
   {
     id: "00318807/2025",
-    latitude:"",
+    latitude: -12.666922,
     longitude: -39.281525,
     data: "2025-04-28",
     localizacao: "Castro alves, BA",
@@ -18998,4 +18998,5 @@ export const COM_OBITO = [
     obtidosAE: 0,
     descricao: "",
   },
-];   
+
+    ];   

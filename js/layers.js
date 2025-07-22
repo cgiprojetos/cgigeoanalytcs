@@ -37,10 +37,11 @@ function criarGrupoDeCirculos(listaDePontos, estilo) {
         const circle = L.circleMarker([ponto.latitude, ponto.longitude], estilo)
                         .bindPopup(popupContent);
         
-        
+        // ADICIONE OQUE PRECISA APARECER OU SER PROCURADO DENTRO DOS PONTOS NO MAPA
         circle.feature = {
             properties: {
-                localizacao: ponto.localizacao
+                localizacao: ponto.localizacao,
+                data: ponto.data
             }
         };
         
