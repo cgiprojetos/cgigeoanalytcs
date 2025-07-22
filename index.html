@@ -17,6 +17,7 @@
 </head>
 <body>
     <div id="map"></div>
+    
     <button id="resete-mapa" class="custom-btn">Mostrar Todos</button>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -25,6 +26,14 @@
     <script src="https://unpkg.com/leaflet-streetview/dist/leaflet-streetview.js"></script>
 
     <script type="module" src="js/main.js"></script>
-
+    
+    <div id="date-filter-container">
+        <label for="start-date">Data de Início:</label>
+        <input type="date" id="start-date">
+        <label for="end-date">Data de Fim:</label>
+        <input type="date" id="end-date">
+        <button id="date-filter-btn">Filtrar Datas</button>
+    </div>
+    
 </body>
 </html>
