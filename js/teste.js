@@ -18141,7 +18141,7 @@ export const COM_OBITO = [
     data: "2025-06-27",
     localizacao: "XIQUE-XIQUE, BA",
     bairro: "Irecê",
-    aisp: "RUA SETE",
+    aisp: "",
     lesionadoNaoAE: 0,
     lesionadoAE: 0,
     obtidosAE: 0,
