@@ -501,3 +501,24 @@
     margin-left: 10px;
     cursor: pointer;
 }
+/* --- ESTILO DO BOTÃO DE VOLTAR --- */
+.back-button {
+    position: absolute;
+    top: 130px;
+    left: 10px;
+    z-index: 1001; /* Z-index alto para ficar acima de outros controles */
+    background-color: #fff;
+    padding: 8px 12px;
+    color: #333;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #f4f4f4;
+}
