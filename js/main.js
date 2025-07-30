@@ -2,6 +2,8 @@ import { initializeMap } from './map.js';
 import { createBaseLayers, createOverlayLayers } from './layers.js';
 import { addLayerControl } from './controls.js';
 import { com_AE, COM_OBITO, SEM_AE } from './dados.js';
+// ADICIONADO: Importa a função de inicialização do chatbot
+import { initializeChatbot } from './chatbot.js'; 
 
 // Variável global para armazenar a última coordenada clicada para o Street View
 let ultimaCoordenadaClicada = null;
@@ -29,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dateFilterButton = document.getElementById('date-filter-btn');
     const aispListContainer = document.getElementById('aisp-list');
     const aispApplyButton = document.getElementById('aisp-apply-btn');
-    const aispSearchInput = document.getElementById('aisp-search-input'); // Pega o novo campo de busca
+    const aispSearchInput = document.getElementById('aisp-search-input');
 
     // --- 2. CRIAÇÃO E GERENCIAMENTO DO FILTRO DE AISP ---
     const todosOsPontos = [...com_AE, ...COM_OBITO, ...SEM_AE];
@@ -57,18 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
     aispSearchInput.addEventListener('input', () => {
         const searchTerm = aispSearchInput.value.toLowerCase();
         const aispItems = aispListContainer.getElementsByClassName('aisp-item');
-
         Array.from(aispItems).forEach(item => {
             const label = item.querySelector('label');
             const aispName = label.textContent.toLowerCase();
             if (aispName.includes(searchTerm)) {
-                item.style.display = 'block'; // Mostra o item se o texto corresponder
+                item.style.display = 'block';
             } else {
-                item.style.display = 'none'; // Esconde o item se não corresponder
+                item.style.display = 'none';
             }
         });
     });
-
 
     // --- 3. LÓGICA DE FILTRAGEM E RESET ---
     
@@ -103,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function filtrarCamadasPorData() {
         const startDate = document.getElementById('start-date').value;
         const endDate = document.getElementById('end-date').value;
-
         if (!startDate || !endDate) {
             alert("Por favor, selecione uma data de início e uma data de fim.");
             return;
@@ -132,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function aplicarFiltroAISP() {
         const checkboxesMarcados = document.querySelectorAll('#aisp-list input:checked');
         const aispsSelecionadas = Array.from(checkboxesMarcados).map(cb => cb.value);
-
         mostrarTodasAsCamadas();
 
         if (aispsSelecionadas.length === 0) {
@@ -141,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const layersFiltrados = [];
-
         Object.values(overlayLayers).forEach(grupo => {
             grupo.eachLayer(layer => {
                 if (aispsSelecionadas.includes(layer.feature.properties.aisp)) {
@@ -163,7 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resetarFiltro(mostrarAlerta = true) {
         mostrarTodasAsCamadas();
-        
         if (resetButton) resetButton.style.display = 'none';
         
         document.getElementById('start-date').value = '';
@@ -231,5 +227,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return new L.Control.StreetViewButton(opts);
     };
     L.control.streetViewButton({ position: 'topleft' }).addTo(map);
+
+    // --- 6. INICIALIZAÇÃO DO CHATBOT ---
+    // ADICIONADO: Chama a função do chatbot, passando todos os dados para ele.
+    initializeChatbot(todosOsPontos);
 
 });

@@ -49,6 +49,33 @@
                 </div>
             </div>
 
+            <!-- Cartão de Relatorio -->
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 flex flex-col">
+                <h2 class="text-2xl font-bold text-gray-700 flex items-center mb-4">
+                    <i data-lucide="map" class="mr-3 text-orange-500"></i> Relatorio
+                </h2>
+                <p class="text-sm text-gray-600 mb-6 flex-grow">
+                    Consulte o relatório do WebGIS para obter uma visão aprofundada dos dados geoespaciais.
+                </p>
+                <div class="mt-auto">
+                    <a href="relatorio.html" target="_blank" class="block text-center w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-transform hover:scale-105">🗺️ Acessar Relatorio</a>
+                </div>
+            </div>
+
+            <!-- Cartão Diagrama de redes -->
+            
+             <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 flex flex-col">
+                <h2 class="text-2xl font-bold text-gray-700 flex items-center mb-4">
+                    <i data-lucide="map" class="mr-3 text-orange-500"></i> Diagrama de Redes
+                </h2>
+                <p class="text-sm text-gray-600 mb-6 flex-grow">
+                    Diagrama de Redes com foco em conexões relevantes para o nível de gestão
+                </p>
+                <div class="mt-auto">
+                    <a href="diagrama.html" target="_blank" class="block text-center w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-transform hover:scale-105">🗺️ Acessar Diagrama</a>
+                </div>
+            </div>
+
 
             <!--Cartão de Dashboard: BI SI-->
             <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 flex flex-col">
@@ -186,9 +213,8 @@
             }
         }
 
-        // Função para copiar texto para a área de transferência
         function copyToClipboard(text, button) {
-            // Cria um elemento de texto temporário para usar o comando de cópia
+
             const tempInput = document.createElement('input');
             tempInput.style.position = 'absolute';
             tempInput.style.left = '-9999px';
@@ -212,7 +238,6 @@
             document.body.removeChild(tempInput);
         }
 
-        // Função para mostrar o feedback visual de "copiado"
         function showCopiedFeedback() {
             const feedbackEl = document.getElementById('copied-feedback');
             feedbackEl.classList.add('show');
