@@ -26,7 +26,7 @@ function criarGrupoDeCirculos(listaDePontos, estilo) {
     const circles = listaDePontos.map(ponto => {
         
        const popupContent = `
-            <b>Procedimento</b> ${ponto.id}</b>
+            <b>Procedimento</b> ${ponto.n_ocorrencia}</b>
             <b>Local:</b> ${ponto.localizacao}<br>
             <b>Data:</b> ${ponto.data ? new Date(ponto.data + 'T00:00:00').toLocaleDateString('pt-BR') : 'N/A'}<br>
             <b>Aisp:</b> ${ponto.aisp || 'Não informado'}<br>
@@ -82,7 +82,7 @@ export function createOverlayLayers() {
     };
         const estilorefem = {
         radius: 7,
-        fillColor: "#6ff715ff", 
+        fillColor: "#6c757d", 
         color: "#000",
         weight: 2,
         opacity: 1,
@@ -90,7 +90,7 @@ export function createOverlayLayers() {
     };
         const estilovitimizacao = {
         radius: 7,
-        fillColor: "#fa3a00ff", 
+        fillColor: "#fd7e14", 
         color: "#000",
         weight: 2,
         opacity: 1,
@@ -113,7 +113,6 @@ export function createOverlayLayers() {
     const grupoREFEM = criarGrupoDeCirculos(refem, estilorefem);
     const grupoVitimizacao = criarGrupoDeCirculos(vitimizacao, estilovitimizacao); 
     const grupoDanos = criarGrupoDeCirculos(danos_colaterais, estilodanos);
-    
     // Retorna o objeto com as camadas que aparecerão no controle de layers.
     return {
         "CONFRONTO COM AE": grupoComAE,
