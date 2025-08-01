@@ -7972,7 +7972,7 @@ export const com_AE = [
     "localizacao": "Salvador, BA",
     "n_ocorrencia": "550154",
     "bairro": "SAO CRISTOVAO",
-    "aisp": "AISP 12-ITAPUÃ",
+    "aisp": "AISP 12-ITAPUA",
     "lesionadoNaoAE": 0,
     "lesionadoAE": 0,
     "obtidosAE": 0,
