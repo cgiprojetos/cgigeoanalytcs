@@ -1,4 +1,4 @@
-import { com_AE, COM_OBITO, SEM_AE } from './dados.js';
+import { com_AE, COM_OBITO, SEM_AE, refem, vitimizacao, danos_colaterais} from './dados.js';
 
 export function initializeChatbot(todosOsDados) {
     

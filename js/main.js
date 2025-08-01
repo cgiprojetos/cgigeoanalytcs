@@ -1,7 +1,7 @@
 import { initializeMap } from './map.js';
 import { createBaseLayers, createOverlayLayers } from './layers.js';
 import { addLayerControl } from './controls.js';
-import { com_AE, COM_OBITO, SEM_AE } from './dados.js';
+import { com_AE, COM_OBITO, SEM_AE, refem, vitimizacao, danos_colaterais } from './dados.js';
 // ADICIONADO: Importa a função de inicialização do chatbot
 import { initializeChatbot } from './chatbot.js'; 
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const aispSearchInput = document.getElementById('aisp-search-input');
 
     // --- 2. CRIAÇÃO E GERENCIAMENTO DO FILTRO DE AISP ---
-    const todosOsPontos = [...com_AE, ...COM_OBITO, ...SEM_AE];
+    const todosOsPontos = [...com_AE, ...COM_OBITO, ...SEM_AE, ...vitimizacao, ...danos_colaterais, ...refem ];
     const todasAsAisps = todosOsPontos.map(ocorrencia => ocorrencia.aisp);
     const aispsUnicas = [...new Set(todasAsAisps)].sort();
 

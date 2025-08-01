@@ -1,4 +1,4 @@
-import { com_AE, COM_OBITO, SEM_AE } from './dados.js';
+import { com_AE, COM_OBITO, SEM_AE, refem, vitimizacao, danos_colaterais } from './dados.js';
 
 
 export function createBaseLayers() {
@@ -80,16 +80,47 @@ export function createOverlayLayers() {
         opacity: 1,
         fillOpacity: 0.8
     };
+        const estilorefem = {
+        radius: 7,
+        fillColor: "#6ff715ff", 
+        color: "#000",
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+    };
+        const estilovitimizacao = {
+        radius: 7,
+        fillColor: "#fa3a00ff", 
+        color: "#000",
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+    };
+        const estilodanos = {
+        radius: 7,
+        fillColor: "#f8e913ff", 
+        color: "#000",
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.8
+    };
+
 
     // Cria os grupos de camadas, passando os dados e o estilo correspondente.
     const grupoComAE = criarGrupoDeCirculos(com_AE, estiloComAE);
     const grupoSemAE = criarGrupoDeCirculos(SEM_AE, estiloSemAE);
     const grupoCOM_OBITO = criarGrupoDeCirculos(COM_OBITO, estiloComObito);
-
+    const grupoREFEM = criarGrupoDeCirculos(refem, estilorefem);
+    const grupoVitimizacao = criarGrupoDeCirculos(vitimizacao, estilovitimizacao); 
+    const grupoDanos = criarGrupoDeCirculos(danos_colaterais, estilodanos);
+    
     // Retorna o objeto com as camadas que aparecerão no controle de layers.
     return {
         "CONFRONTO COM AE": grupoComAE,
         "CONFRONTO SEM AE": grupoSemAE,
-        "CONFRONTO COM PFO": grupoCOM_OBITO
+        "CONFRONTO COM PFO": grupoCOM_OBITO,
+        "SITUACAO COM REFEM": grupoREFEM,
+        "VITIMIZACAO POLICIAL": grupoVitimizacao,
+        "DANOS COLATERIAS": grupoDanos
     };
 }
