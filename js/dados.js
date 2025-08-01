@@ -7891,8 +7891,8 @@ export const com_AE = [
   },
   {
     "id": "648",
-    "latitude": -12.9114869,
-    "longitude": -38.3500864,
+    "latitude": -12.9504,
+    "longitude": -38.4701,
     "data": "2025-07-11",
     "localizacao": "Salvador, BA",
     "n_ocorrencia": "549470",
