@@ -2,8 +2,6 @@ import { initializeMap } from './map.js';
 import { createBaseLayers, createOverlayLayers } from './layers.js';
 import { addLayerControl } from './controls.js';
 import { com_AE, COM_OBITO, SEM_AE, refem, vitimizacao, danos_colaterais } from './dados.js';
-// ADICIONADO: Importa a função de inicialização do chatbot
-import { initializeChatbot } from './chatbot.js'; 
 
 // Variável global para armazenar a última coordenada clicada para o Street View
 let ultimaCoordenadaClicada = null;
@@ -230,6 +228,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 6. INICIALIZAÇÃO DO CHATBOT ---
     // ADICIONADO: Chama a função do chatbot, passando todos os dados para ele.
-    initializeChatbot(todosOsPontos);
-
 });
